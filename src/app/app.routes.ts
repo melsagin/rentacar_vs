@@ -3,6 +3,7 @@ import { HomePageComponent } from './routers/home-page/home-page.component';
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 import { TestPageComponent } from './routers/test-page/test-page.component';
 import { NotFoundPageComponent } from './routers/not-found-page/not-found-page.component';
+import { ModelPageComponent } from './routers/model-page/model-page.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'models', // /home/models
-        component: HomePageComponent,
+        component: ModelPageComponent,
       },
       {
         path: 'brands', // /home/brands
