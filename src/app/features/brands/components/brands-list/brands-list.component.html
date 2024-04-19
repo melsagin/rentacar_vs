@@ -1,0 +1,9 @@
+<p (click)="onBrandClick(null)">All</p>
+@for (item of list; track $index) {
+  <div class="brand-list-class">
+    <p (click)="onBrandClick(item.id)">{{ item.name }}</p>
+    <!--<a class="btn btn-success" [routerLink]="['/brands/'+ item.id]">Update</a>-->
+    <button style="margin-top: 10px;" type="button" class="btn btn-success" [routerLink]="['/brands/'+ item.id]">Update</button>
+  </div>
+
+}
