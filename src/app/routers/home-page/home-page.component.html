@@ -2,10 +2,10 @@
 <p>Find the best car for you!</p>
 
 <app-brands-list (selectBrand)="onBrandSelect($event)"></app-brands-list>
-<!-- $event : event'in verdiği veriyi almamızı sağlayan özel bir keyword. -->
+<!-- $event : event'in (selectBrandden gelen kullanıcın tıkladığı) verdiği veriyi almamızı sağlayan özel bir keyword. -->
 <hr />
 Search: <input type="text" [(ngModel)]="searchBrandName" />
-<!-- FormsModule ile gelen ngModel benim için input ile state'i birbirine iki yönlü atama olacak şekilde bağlamama yardımcı oluyor -->
+<!-- FormsModule ile gelen ngModel benim için input ile state'i birbirine iki yönlü atama olacak şekilde bağlamaya yardımcı oluyor -->
 <app-models-list
   [brandId]="selectedBrandId"
   [searchBrandName]="searchBrandName"

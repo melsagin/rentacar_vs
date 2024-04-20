@@ -21,7 +21,7 @@ export class UpdateBrandFormComponent implements OnInit{
   id: string | null = null
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');//burası tam olarak ne yapıyor?
   }
 
   form: FormGroup = this.fb.group({
@@ -33,7 +33,7 @@ export class UpdateBrandFormComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute,//Bu ne işe yarıyor?
     private brandsApiService: BrandsApiService
   ) {}
 
@@ -61,6 +61,5 @@ export class UpdateBrandFormComponent implements OnInit{
     }
     this.updateBrand();
   }
-
 
 }

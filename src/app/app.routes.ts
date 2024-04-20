@@ -5,6 +5,8 @@ import { TestPageComponent } from './routers/test-page/test-page.component';
 import { NotFoundPageComponent } from './routers/not-found-page/not-found-page.component';
 import { CreateBrandPageComponent } from './routers/create-brand-page/create-brand-page.component';
 import { UpdateBrandFormComponent } from './features/brands/components/update-brand-form/update-brand-form.component';
+import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
+import { UpdateModelFormComponent } from './features/models/components/update-model-form/update-model-form.component';
 
 export const routes: Routes = [
   // Home
@@ -36,8 +38,16 @@ export const routes: Routes = [
     component: CreateBrandPageComponent,
   },
   {
+    path: 'models/create',
+    component: CreateModelPageComponent,
+  },
+  {
     path: 'brands/:id',
     component: UpdateBrandFormComponent,
+  },
+  {
+    path: 'models/:id',
+    component: UpdateModelFormComponent,
   },
   // 404 Not Found Page
   {
