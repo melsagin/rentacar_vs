@@ -2,6 +2,7 @@
 <p *ngFor="let item of list; let i = index">
   {{ item.name }}
   <!-- {{ i }} -->
+  <button style="margin-top: 10px;" type="button" class="btn btn-success" [routerLink]="['/models/'+ item.id]">Update</button>
 </p>
 
 <!-- >= Angular 17 -->
