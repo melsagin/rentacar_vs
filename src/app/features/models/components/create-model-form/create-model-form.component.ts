@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { PostModelRequest } from '../../models/post-model-request';
 import { ControlErrorMessagePipe } from '../../../../core/pipes/control-error-message.pipe';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-create-model-form',
@@ -20,11 +19,6 @@ import { Observable, of } from 'rxjs';
 })
 export class CreateModelFormComponent {
   hasFormSubmit: boolean = false
-  x: Promise<string> | null = Promise.resolve("hello world");
-  y: Observable<string> | null = of("hello world");
-  z = 100
-  w = new Date(2024, 4, 24, 11, 57, 1)
-
   form: FormGroup = this.fb.group({
     name: [
       '',

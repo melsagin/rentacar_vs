@@ -4,7 +4,6 @@ import { AbstractControl } from '@angular/forms';
 @Pipe({
   name: 'nameErrorMessage',
   standalone: true,
-  pure: false
 })
 export class ControlErrorMessagePipe implements PipeTransform {
 
@@ -13,11 +12,11 @@ export class ControlErrorMessagePipe implements PipeTransform {
       return null;
     }
 
-    if (control.errors['required']) { // 'required' özelliğine [] kullanarak erişim
+    if (control.errors['required']) {
       return 'Bu alan zorunludur.';
     }
 
-    if (control.errors['minlength']) { // 'required' özelliğine [] kullanarak erişim
+    if (control.errors['minlength']) {
       return 'Bu alan minimum 3 haneden oluşmalıdır.';
     }
 

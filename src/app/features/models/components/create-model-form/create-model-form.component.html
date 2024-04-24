@@ -1,11 +1,6 @@
 <form [formGroup]="form" (submit)="onFormSubmit()">
   <!-- Name Input -->
 
-  <p>{{x | async}}</p>
-  <p>{{y | async}}</p>
-  <p>{{z | currency:'CAD':'symbol':'4.2-3':'en'}}</p>
-  <p>{{w | date: 'YYYY-MM-dd h:mm:ss a'}}</p>
-
   Name: <input type="text" formControlName="name" (ngModelChange)="hasFormSubmit" />
   <div *ngIf="form.get('name')?.invalid">
     <span *ngIf="hasFormSubmit">{{ form.get('name') | nameErrorMessage }}</span>
