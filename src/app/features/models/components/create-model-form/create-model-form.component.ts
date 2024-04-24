@@ -3,23 +3,32 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { PostModelRequest } from '../../models/post-model-request';
+import { ControlErrorMessagePipe } from '../../../../core/pipes/control-error-message.pipe';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-create-model-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ControlErrorMessagePipe
   ],
   templateUrl: './create-model-form.component.html',
   styleUrl: './create-model-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateModelFormComponent {
+  hasFormSubmit: boolean = false
+  x: Promise<string> | null = Promise.resolve("hello world");
+  y: Observable<string> | null = of("hello world");
+  z = 100
+  w = new Date(2024, 4, 24, 11, 57, 1)
+
   form: FormGroup = this.fb.group({
     name: [
       '',
-      [Validators.required]
+      [Validators.required, Validators.minLength(3)]
     ],
     brandId: [
       '',
@@ -68,6 +77,7 @@ export class CreateModelFormComponent {
 
   onFormSubmit() {
     console.log(this.form);
+    this.hasFormSubmit = true
 
     if (this.form.invalid) {
       console.error('Form is invalid');
